@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parallax Effect</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background: #000;
+            color:white;
+        }
+        .header{
+            position: relative;
+            width:100%;
+            height:100vh;
+            overflow: hidden;
+            background: #000;
+        }
+        .header #bg{
+           position: absolute;
+           top:0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: url('wallpaper.jpg'); 
+           background-position: center;
+           background-size: cover;
+        }
+        section{
+            padding: 100px;
+            color:#fff;
+            height: 100vh;
+        }
+        section h2{
+            font-size: 3em;
+        }
+        section p{
+            font-size: 1.2em;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div id="bg"></div>
+    </div>
+    <section>
+        <h2>Parallax Effect with CSS & Javascript</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores velit magnam accusamus assumenda ratione. Quibusdam, ex odit! Suscipit eum autem maxime commodi? Assumenda voluptatum animi officia inventore dicta esse doloremque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptatibus temporibus debitis vero minus eos, expedita molestiae earum assumenda necessitatibus. Assumenda, omnis atque! Pariatur aspernatur sit porro! Qui, ea sunt!
+            <br/>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus unde dicta, eligendi quasi dolore quos voluptas neque ab nemo dolores temporibus architecto perspiciatis suscipit nesciunt quis molestiae modi tenetur quia!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dolorum consectetur, perspiciatis debitis esse repellendus necessitatibus animi error quaerat obcaecati consequatur libero quis sed aliquid. Nemo quisquam culpa est laborum?
+        </p>
+    </section>
+
+
+    <script type="text/javascript">
+        var headerBg = document.getElementById('bg');
+        window.addEventListener('scroll', function(){
+            headerBg.style.opacity = 1 - +window.pageYOffset/550+'';
+            headerBg.style.top = +window.pageYOffset+'px';
+            headerBg.style.backgroundPositionY = - +window.pageYOffset/2+'px';
+        });
+    </script>
+
+</body>
+</html>
